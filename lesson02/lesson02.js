@@ -1,4 +1,4 @@
-let money = 3.14;
+let money = 15000;
 let income = "freelance";
 let addExpenses = "lemON, orange, pie";
 let deposit = true;
@@ -14,5 +14,5 @@ console.log( "Цель заработать " + mission + " рублей");
 addExpenses=addExpenses.toLowerCase();
 console.log( addExpenses.split(" "));
 
-let budgetDay = 15000 / 30;
-console.log(budgetDay + " " + 15000 % 30);
+let budgetDay = money / 30;
+console.log(budgetDay + " " + money % 30);
