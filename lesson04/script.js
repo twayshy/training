@@ -4,9 +4,9 @@ let questionOne = prompt ("Какие обязательные ежемесяч�
 let questionOneAnsw = +prompt ("Во сколько это обойдётся?");
 
 let getExpensesMonth =function(){
-    return (questionAnsw+questionOneAnsw());
+    return (questionAnsw+questionOneAnsw);
 };
-console.log('getExpensesMonth: ', getExpensesMonth);
+console.log('getExpensesMonth: ', getExpensesMonth());
 
 let money = Number(prompt("Ваш месячный доход???"));
 
