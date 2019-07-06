@@ -1,30 +1,27 @@
-let addExpenses = prompt("Перечислите возможные расходы за рассчитываемый период через запятую");
-let waste = addExpenses.split(",");
+let question = prompt ("Какие обязательные ежемесячные расходы у вас есть?");
+let questionAnsw = +prompt ("Во сколько это обойдётся?");
+let questionOne = prompt ("Какие обязательные ежемесячные расходы у вас есть?");
+let questionOneAnsw = +prompt ("Во сколько это обойдётся?");
 
-function getExpensesMonth(array) {
-    let result = 0;
-    for (let i = 0; i < array.length; i++) {
-        result += Number(array[i]);
-    }
-    return result;
+let getExpensesMonth =function(){
+    return (questionAnsw+questionOneAnsw);
 };
-console.log(getExpensesMonth(waste));
-
+console.log('getExpensesMonth: ', getExpensesMonth);
 
 let money = Number(prompt("Ваш месячный доход???"));
 
-function getAccumulatedMonth(o, c) {
-    let result = o - c;
+function getAccumulatedMonth() {
+    let result = money- getExpensesMonth();
     return result;
 };
-let accumulatedMonth = getAccumulatedMonth(money, getExpensesMonth(waste));
+let accumulatedMonth = getAccumulatedMonth();
 console.log('accumulatedMonth: ', accumulatedMonth);
 
 
 let mission = 4;
 
 function getTargetMonth() {
-    let result = Math.floor(mission / accumulatedMonth);
+     let result = Math.floor(mission / getAccumulatedMonth());
 
     return result;
 };
