@@ -37,17 +37,11 @@ function getTargetMonth() {
     if (result < 0) {
         return ("Цель не будет достигнута");
     };
-    return result;
+    return ("Цель будет достигнута через "+result);
 };
 console.log(getTargetMonth());
 
-let showTypeof = function(item){
-    console.log(item, typeof item);
-};
-
-showTypeof(mission);
-
-let budgetDay = money / 30; 
+let budgetDay = Math.floor(accumulatedMonth / 30); 
 
 function getStatusIncome(){
     if (budgetDay > 800) {
@@ -76,5 +70,4 @@ let start = function(){
         console.log(money); 
     } while (isNaN(money) || money == '' || money == null);
 };
-
 
