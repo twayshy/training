@@ -1,10 +1,22 @@
+'use strict'
+
 let question = prompt ("Какие обязательные ежемесячные расходы у вас есть?");
 let questionAnsw = +prompt ("Во сколько это обойдётся?");
 let questionOne = prompt ("Какие обязательные ежемесячные расходы у вас есть?");
 let questionOneAnsw = +prompt ("Во сколько это обойдётся?");
 
+
 let getExpensesMonth =function(){
-    return (questionAnsw+questionOneAnsw);
+
+    if (isNaN(questionAnsw) || questionAnsw == '' || questionAnsw == null) {
+        return "wrong value 1";
+    }
+    else if (isNaN(questionOneAnsw) || questionOneAnsw == '' || questionOneAnsw == null) {
+       return "wrong value 2";
+    }
+    else {
+        return (questionAnsw + questionOneAnsw);
+    }
 };
 console.log('getExpensesMonth: ', getExpensesMonth());
 
@@ -22,7 +34,9 @@ let mission = 4;
 
 function getTargetMonth() {
      let result = Math.floor(mission / getAccumulatedMonth());
-
+    if (result < 0) {
+        return ("Цель не будет достигнута");
+    };
     return result;
 };
 console.log(getTargetMonth());
@@ -45,11 +59,12 @@ function getStatusIncome(){
     else if (budgetDay >= 0 && budgetDay < 300 ) {
         return("Низкий уровень дохода");
     }
+    else if (budgetDay < 0) {
+        return "Что-то пошло не так!";
+    }
 }
 console.log('getStatusIncome(): ', getStatusIncome());
 
-
-// Урок 5
 
 
 let start = function(){
@@ -61,4 +76,5 @@ let start = function(){
         console.log(money); 
     } while (isNaN(money) || money == '' || money == null);
 };
+
 
