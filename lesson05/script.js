@@ -20,8 +20,8 @@ let getExpensesMonth =function(){
 };
 console.log('getExpensesMonth: ', getExpensesMonth());
 
-let money = Number(prompt("Ваш месячный доход???"));
-
+let money;
+start();
 function getAccumulatedMonth() {
     let result = money- getExpensesMonth();
     return result;
@@ -67,12 +67,9 @@ console.log('getStatusIncome(): ', getStatusIncome());
 
 
 
-let start = function(){
-    money = prompt('Ваш месячный доход???');
-    console.log(money);
-
+function start(){
     do {
-        money = prompt('Ваш месячный доход???');
+        money = Number(prompt('Ваш месячный доход???'));
         console.log(money); 
     } while (isNaN(money) || money == '' || money == null);
 };
